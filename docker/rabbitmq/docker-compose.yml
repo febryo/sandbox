@@ -8,5 +8,3 @@ services:
     - "61613:61613"
   volumes:
     - "rabbitmq_data:/data"
-volumes:
-  rabbitmq_data:
