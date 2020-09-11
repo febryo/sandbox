@@ -1,12 +1,12 @@
 version: "3"
 services:
  rabbitmq:
-  image: "rabbitmq-stomp:latest"
+  image: "rabbitmq:3-management"
   ports:
     - "5672:5672"
     - "15672:15672"
     - "61613:61613"
   volumes:
-    - "rabbitmq_data:/data"
-volumes:
-  rabbitmq_data:
+    - "./.docker/rabbitmq/etc/:/etc/rabbitmq/"
+    - "./.docker/rabbitmq/data/:/var/lib/rabbitmq/mnesia"
+    - "./.docker/rabbitmq/logs/:/var/log/rabbitmq/"
